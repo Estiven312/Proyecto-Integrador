@@ -49,7 +49,8 @@
             <button class="btn btn-primary btn-block" type="submit">Entrar</button>
           </form><br>
           <div class="text-center">
-            <a class="d-block small" href="/admin/recupero-clave">Recuperar clave</a>
+            <a class="" href="/admin/recupero-clave">Recuperar clave</a><br>
+            <a href="/">Ir a Burguers</a>
           </div>
         </div>
       </div>

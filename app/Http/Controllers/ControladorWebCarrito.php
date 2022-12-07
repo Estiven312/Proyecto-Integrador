@@ -94,13 +94,7 @@ class ControladorWebCarrito extends Controller
                 $aCarrito = $carrito->obtenerPorId($idCliente);
                 $Total = 0;
                 $lisIdPedido=[];
-                
-
-
                 foreach ($aCarrito as $key => $value) {
-
-                 
-
                     $aProducto = $producto->obtenerPorId($value->fk_idproducto);
 
                     $CarroTotal += array(
@@ -113,13 +107,9 @@ class ControladorWebCarrito extends Controller
                         )
                     );
                     $Total = $aProducto[0]->precio * $value->cantidad;
-
                     $pedido->pago = "$pago";
                     $pedido->total = $Total;
-                    
                     $lisIdPedido[] += $pedido->insertar();
-
-                   
                 }
 
                 foreach ($CarroTotal as $key => $value) {
@@ -129,12 +119,7 @@ class ControladorWebCarrito extends Controller
 
                     $pedido->insertar_pedido_productos();
                 }
-               
-
-              
-
-               
-               
+  
             }else if($pago == "MP.Pago"){
 
                 date_default_timezone_set("America/Bogota");
@@ -156,8 +141,8 @@ class ControladorWebCarrito extends Controller
                 $CarroTotal = array();
                 $producto = new Producto();
                 $aCarrito = $carrito->obtenerPorId($idCliente);
-                $Total = 0;
-
+                $TotalMP = 0;
+                $lisIdPedido = [];
 
                 foreach ($aCarrito as $key => $value) {
 
@@ -172,22 +157,18 @@ class ControladorWebCarrito extends Controller
                             'IdCarrito' => $value->idcarrito
                         )
                     );
-                    $Total += $aProducto[0]->precio * $value->cantidad;
+                   $TotalMP+= $Total = $aProducto[0]->precio * $value->cantidad;
+                    $pedido->pago = "$pago";
+                    $pedido->total = $Total;
+
+
+                    $lisIdPedido[] += $pedido->insertar();
                 }
-                $pedido->pago = "$pago";
-                $pedido->total = $Total;
-
-              
-
-              
-
-
 
                 // $access_token = "";
                 // SDK::setClientId(config("payment-methods.mercadopago.client"));
                 // SDK::setClientSecret(config("payment-methods.mercadopago.secret"));
                 // SDK::setAccessToken($access_token);
-
 
                 // //Armado del producto ‘item’
                 // $item = new Item();
@@ -195,7 +176,7 @@ class ControladorWebCarrito extends Controller
                 // $item->title = "Compra Web Burger SRL";
                 // $item->category_id = "products";
                 // $item->quantity = 1;
-                // $item->unit_price = $Total;
+                // $item->unit_price =  $TotalMP;
                 // $item->currency_id = "COP";
 
                 // $preference = new Preference();
@@ -213,19 +194,13 @@ class ControladorWebCarrito extends Controller
                 // );
                 // $preference->payer = $payer;
 
-
-
-                $idpedido = $pedido->insertar();
-
                 foreach ($CarroTotal as $key => $value) {
                     $pedido->producto = $value['Producto'];
                     $pedido->cantidad = $value['Cantidad'];
-                    $pedido->pedido = $idpedido;
+                    $pedido->pedido = $lisIdPedido[$key];
 
                     $pedido->insertar_pedido_productos();
                 }
-
-
 
                 // $preference->back_urls = [
                 //     "success" => "http://127.0.0.1:8000/mercado-pago/aprobado/" . $pedido->idpedido,
@@ -238,17 +213,9 @@ class ControladorWebCarrito extends Controller
                 // $preference->notification_url = '';
                 // $preference->save(); //Ejecuta la transacción
 
-
-
-                
-
-
-
-
             }
            
             $carrito->eliminarPorCliente($idCliente);
-            
             return redirect('/MiCuenta');
         }
 

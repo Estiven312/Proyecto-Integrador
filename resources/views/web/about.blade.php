@@ -3,6 +3,7 @@
 <li><a href="/">Inicio</a></li>
 <li><a href="/takeawey">Takeawey</a></li>
 <li><a class="active" href="/Nosotros">Nosotros</a></li>
+<li><a href="/Contacto">Contacto</a></li>
 @endsection
 @section('contenido')
 
@@ -35,7 +36,17 @@
                         <h3>La mejor burgueseria <br>
                             de la ciudad</h3>
                     </div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate</p>
+                    <p>Somos una experiencia de hospitalidad y gastronomía en constante movimiento. 
+                        Empezamos en 2003, creando el primer local Burger Top . Desde entonces, nos 
+                        dedicamos a cocinar tus platillos japoneses favoritos, recibiéndote siempre,
+                         en un ambiente casual y divertido. Cada día, seleccionamos los mejores 
+                         ingredientes de proveedores locales y extranjeros responsables con México
+                          y el medio ambiente. Trabajamos en equipo para tocar positivamente la vida
+                           de nuestros compañeros e invitados con procesos seguros, excelente servicio 
+                           y pasión culinaria. Nos mueve aprender, enseñar y descubrir para crecer. Creemos 
+                           en aprovechar lo que recibimos para convertirlo en algo mejor. Sobre todas las cosas,
+                            siempre queremos que la pases bien comiendo y bebiendo delicioso con nosotros.
+                         Descubre todo nuestro menú sorprendiéndote con algo nuevo cada vez.</p>
                     <div class="img_thumb">
                         <img src="web/img/jessica-signature.png" alt="">
                     </div>
@@ -48,13 +59,35 @@
 
 <!-- gallery_start -->
 <div class="gallery_area">
+
+
     <div class="container">
         <div class="row">
+
             <div class="col-xl-12">
                 <div class="section_title mb-70 text-center">
                     <span>Trabaja Con Nosotros</span>
                     <!-- <h3>Our Gallery</h3> -->
                 </div>
+            </div>
+            <div id="slider" class=" col-xl-12 text-center m-4">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active section_title">
+                            <span>A menudo las personas están trabajando duro en la cosa equivocada. Trabajar en la cosa correcta probablemente es más importante que trabajar duro.</span>
+                        </div>
+                        <div class="carousel-item  section_title">
+
+                            <span>Apunta a la luna. Si fallas, podrías dar a una estrella.</span>
+                        </div>
+                        <div class="carousel-item  section_title">
+
+                            <span>Cualquier cosa que la mente del hombre puede concebir y creer, puede ser conseguida.</span>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -66,25 +99,25 @@
             <div class="row">
                 <div class="col-6 p-2">
                     <label for=""> <span>Nombre</span></label>
-                    <input type="text" name="txtNombre" class="form-control">
+                    <input type="text" name="txtNombre" class="form-control" required>
                 </div>
 
                 <div class="col-6 p-2">
                     <label for="">Apellido</label>
-                    <input type="text" name="txtApellido" class="form-control">
+                    <input type="text" name="txtApellido" class="form-control" required>
 
                 </div>
                 <div class="col-6 p-2">
                     <label for="">Whatsapp</label>
-                    <input type="text" name="txtTelefono" class="form-control">
+                    <input type="text" name="txtTelefono" class="form-control" required>
                 </div>
                 <div class="col-6 p-2">
                     <label for="">Correo</label>
-                    <input type="email" name="txtCorreo" class="form-control">
+                    <input type="email" name="txtCorreo" class="form-control" required>
                 </div>
                 <div class="col-6 p-2">
                     <label for="">Hoja de vida </label>
-                    <input type="file" class="form-control" name="archivo" id="archivo" accept=".doc, .docx, .pdf" class="form-control-file ">
+                    <input type="file" class="form-control" name="archivo" id="archivo" accept=".doc, .docx, .pdf" class="form-control-file " required>
                     <small class="d-block">Archivos admitidos: .doc, .docx, .pdf</small>
                 </div>
 

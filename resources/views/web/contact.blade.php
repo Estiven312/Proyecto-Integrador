@@ -1,10 +1,16 @@
 @extends('web/plantillaWeb')
+
 @section('pagina')
+<li> <a href="/">Inicio</a></li>
+<li><a href="/takeawey">Takeawey</a></li>
+<li><a href="/Nosotros">Nosotros</a></li>
+<li><a class="active" href="#">Contacto</a></li>
+@endsection
 @section('contenido')
 
 <!-- bradcam_area_start -->
 <div class="bradcam_area breadcam_bg_2">
-    <h3>Get in Touch</h3>
+    <h3>CONTACTO</h3>
 </div>
 <!-- bradcam_area_end -->
 
@@ -12,64 +18,53 @@
 <section class="contact-section">
     <div class="container">
         <div class="d-none d-sm-block mb-5 pb-4">
-        
+
 
         </div>
 
 
         <div class="row">
             <div class="col-12">
-                <h2 class="contact-title">Get in Touch</h2>
+                <h2 class="contact-title">Contacto, quejas o sugerencias</h2>
             </div>
             <div class="col-lg-8">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <form class="form-contact contact_form" action="" method="post"  >
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                <textarea class="form-control w-100"  cols="30" rows="9" placeholder='Deja aquí tu mensaje, queja o sugerencia' required></textarea>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                <input class="form-control " name="name" id="name" type="text" placeholder='Nombre' required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                <input class="form-control " name="email" id="email" type="email" placeholder='Correo' required>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                <input class="form-control" name="subject" id="subject" type="text" placeholder='Asunto' required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                        <button type="submit" class="button boxed-btn">Enviar</button>
                     </div>
                 </form>
             </div>
             <div class="col-lg-3 offset-lg-1">
+
+
                 <div class="media contact-info">
-                    <span class="contact-info__icon"><i class="ti-home"></i></span>
+                    <span class="contact-info__icon"><i class=""></i></span>
                     <div class="media-body">
-                        <h3>Buttonwood, California.</h3>
-                        <p>Rosemead, CA 91770</p>
-                    </div>
-                </div>
-                <div class="media contact-info">
-                    <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-                    <div class="media-body">
-                        <h3>+1 253 565 2365</h3>
-                        <p>Mon to Fri 9am to 6pm</p>
-                    </div>
-                </div>
-                <div class="media contact-info">
-                    <span class="contact-info__icon"><i class="ti-email"></i></span>
-                    <div class="media-body">
-                        <h3>support@colorlib.com</h3>
-                        <p>Send us your query anytime!</p>
+                        <h3>support@burgers.com</h3>
+                        <p>Dejanos tu mensaje!</p>
                     </div>
                 </div>
             </div>

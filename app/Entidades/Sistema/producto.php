@@ -10,19 +10,7 @@ require app_path() . '/start/constants.php';
 
 class Producto extends Model
 {
-      protected $table = 'sistema_patentes';
-      public $timestamps = false;
-
-      protected $fillable = [
-            'idpatente',
-            'nombre',
-            'descripcion',
-            'modulo',
-            'submodulo',
-            'tipo',
-            'log_operacion'
-      ];
-
+   
       public function cargarDesdeRequest($request)
       { //consulta de cargar imagen
             $this->idproducto = $request->input('id') != "0" ? $request->input('id') : $this->idproducto;
@@ -152,14 +140,6 @@ class Producto extends Model
             return $lstRetorno;
             
       }
-
-
-
-
-
-
-
-
 
 
 

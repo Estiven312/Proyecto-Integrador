@@ -39,7 +39,7 @@ class ControladorWebLogin extends Controller
             $cliente->actualizar($aCliente[0]->idcliente);
            
             
-            $msg = "Tu nueva contraseña ah sido actualiza por:";
+            $msg = "Tu nueva contraseña ha sido actualiza por:";
             return view("web.recuperar_clave", compact("nuevaContrasena", "msg"));
             
             

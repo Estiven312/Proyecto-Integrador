@@ -3,6 +3,7 @@
 <li><a href="/">Inicio</a></li>
 <li><a href="/takeawey">Takeawey</a></li>
 <li><a href="/Nosotros">Nosotros</a></li>
+<li><a href="/Contacto">Contacto</a></li>
 @endsection
 @section('contenido')
 <div class="bradcam_area breadcam_bg overlay">

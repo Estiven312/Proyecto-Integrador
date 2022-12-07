@@ -3,6 +3,7 @@
 <li><a href="/">Inicio</a></li>
 <li><a class="active" href="/takeawey">Takeawey</a></li>
 <li><a href="/Nosotros">Nosotros</a></li>
+<li><a href="/Contacto">Contacto</a></li>
 @endsection
 @section('contenido')
 <!-- bradcam_area_start -->

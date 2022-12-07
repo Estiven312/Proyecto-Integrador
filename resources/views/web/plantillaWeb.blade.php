@@ -144,7 +144,7 @@
                                           {{$sucursal->nombre}}
                                     </h3>
                                     <p>{{$sucursal->direccion}} <br>
-                                          <a href="{{$sucursal->linkmapa}}">{{$sucursal->linkmapa}}</a>
+                                          <a href="{{$sucursal->linkmapa}}">Link Mapa {{$sucursal->nombre}}</a>
                                     </p>
                                     <a class="number" href="#">{{$sucursal->telefono}}</a>
                                     <p>

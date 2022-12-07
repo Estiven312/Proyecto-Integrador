@@ -2,14 +2,14 @@
 @section('pagina')
 <li><a href="/">Inicio</a></li>
 <li><a href="/takeawey">Takeawey</a></li>
-<li><a class="active" href="/Nosotros">Nosotros</a></li>
-<li><a  href="/Contacto">Contacto</a></li>
+<li><a  href="/Nosotros">Nosotros</a></li>
+<li><a  class="active" href="/Contacto">Contacto</a></li>
 @endsection
 @section('contenido')
 
 <!-- bradcam_area_start -->
-<div class="bradcam_area breadcam_bg_1 overlay">
-      <h3>Nosotros</h3>
+<div class="bradcam_area breadcam_bg_2 overlay">
+      <h3>Contacto</h3>
 </div>
 <!-- bradcam_area_end -->
 <!-- about_area_start -->
@@ -29,7 +29,7 @@
                   <div class="row">
                         <div class="col-xl-12">
                               <div class="section_title mb-70 text-center">
-                                    <span>Gracias, pronto estarás resibiendo noticias nuestras.</span>
+                                    <span>Gracias por comunicarte con nosotros.</span>
                                     <!-- <h3>Our Gallery</h3> -->
                               </div>
                         </div>

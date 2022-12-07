@@ -50,6 +50,12 @@ Route::group(array('domain' => '127.0.0.1'), function () {
     Route::get('/Carrito', 'ControladorWebCarrito@index');
     Route::post('/Carrito', 'ControladorWebCarrito@guardar');
     
+    Route::get('/GraciasContacto', 'ControladorWebContacto@graciasIndex'); 
+    Route::get('/Contacto', 'ControladorWebContacto@index');
+    Route::post('/Contacto', 'ControladorWebContacto@gracias');
+   
+ 
+    
  
 
     Route::get('/admin', 'ControladorHome@index');
@@ -65,6 +71,10 @@ Route::group(array('domain' => '127.0.0.1'), function () {
     Route::get('/admin/logout', 'ControladorLogin@logout');
     Route::post('/admin/logout', 'ControladorLogin@entrar');
     Route::post('/admin/login', 'ControladorLogin@entrar');
+
+   
+
+
 
 /* --------------------------------------------- */
 /* CONTROLADOR RECUPERO CLAVE                    */

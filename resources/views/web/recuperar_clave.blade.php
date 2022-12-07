@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>RecuperarClave</title>
       <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
       <!-- Place favicon.ico in the root directory -->
 
@@ -47,7 +47,7 @@
                                     </div>
                               <?php } else { ?>
                                     <div class="column" id="main">
-                                          <h1>Iniciar Sesión </h1>
+                                          <h1>Recuperar Clave</h1>
                                           <?php
                                           if (isset($msg)) { ?>
                                                 <div class="alert alert-danger" role="alert">
@@ -66,7 +66,7 @@
                                                 <button type="submit" class="btn btn-primary">Recuperar</button><br>
                                                 <div class="p-2 text-center">
 
-                                                      <a href="/login">Volvel al login</a>
+                                                      <a href="/login">Volver al login</a>
                                                 </div>
 
                                           </form>

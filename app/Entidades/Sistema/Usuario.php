@@ -76,12 +76,14 @@ class Usuario extends Model
 
     public function verificarExistenciaMail($mail){
         $sql = "SELECT 
-            count (A.idusuario) as cantidad
+        A.idusuario as cantidad
             FROM sistema_usuarios A 
             WHERE A.mail = '$mail'"; 
 
         $lstRetorno = DB::select($sql);
-        return $lstRetorno[0]->cantidad > 0;
+       
+          $numero=count($lstRetorno);
+          return $numero? $numero>0:"";
     }
 
     public function encriptarClave($clave){

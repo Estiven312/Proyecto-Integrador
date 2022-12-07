@@ -10,18 +10,9 @@ require app_path() . '/start/constants.php';
 
 class Postulacion extends Model
 {
-      protected $table = 'sistema_patentes';
-      public $timestamps = false;
+      
 
-      protected $fillable = [
-            'idpatente',
-            'nombre',
-            'descripcion',
-            'modulo',
-            'submodulo',
-            'tipo',
-            'log_operacion'
-      ];
+  
       public function obtenerTodos()
       {
 
@@ -99,45 +90,7 @@ class Postulacion extends Model
 
     
 
-      public function obtenerFiltradoDisponibles()
-      {
-            /*
-         * Obtiene todas las patentes que aun no fueron agregadas en la familia
-         * 
-         */
-            $request = $_REQUEST;
-            $columns = array(
-                  0 => 'A.idpatente',
-                  1 => 'A.idpatente',
-                  2 => 'A.descripcion',
-                  3 => 'A.tipo',
-                  4 => 'A.modulo',
-                  5 => 'A.submodulo',
-                  6 => 'A.nombre'
-            );
-            $sql = "SELECT 
-                    idpatente, 
-                    nombre,
-                    descripcion,
-                    modulo,
-                    submodulo,
-                    tipo
-                    FROM sistema_patentes A WHERE 1=1 ";
-
-            if (!empty($request['search']['value'])) {
-                  $sql .= " AND ( A.nombre LIKE '%" . $request['search']['value'] . "%' ";
-                  $sql .= " OR A.descripcion LIKE '%" . $request['search']['value'] . "%' ";
-                  $sql .= " OR A.modulo LIKE '%" . $request['search']['value'] . "%' ";
-                  $sql .= " OR A.submodulo LIKE '%" . $request['search']['value'] . "%' ";
-                  $sql .= " OR A.tipo LIKE '%" . $request['search']['value'] . "%' )";
-            }
-            $sql .= " ORDER BY " . $columns[$request['order'][0]['column']] . "   " . $request['order'][0]['dir'];
-
-            $lstRetorno = DB::select($sql);
-
-            return $lstRetorno;
-      }
-
+     
    
 
       public function obtenerPorId($idpatente)
@@ -159,18 +112,7 @@ class Postulacion extends Model
     
      
 
-      public function guardar()
-      {
-            $sql = "UPDATE sistema_patentes SET
-            nombre = '$this->nombre',
-            tipo = '$this->tipo',
-            modulo = '$this->modulo',
-            submodulo = '$this->submodulo',
-            log_operacion = $this->log_operacion,
-            descripcion = '$this->descripcion'
-            WHERE idpatente=?";
-            DB::update($sql, [$this->idpatente]);
-      }
+  
 
       public  function eliminar($idpostulacion)
       {

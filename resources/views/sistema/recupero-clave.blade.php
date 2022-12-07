@@ -37,7 +37,7 @@
             @endif
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Nuevo registro</a>
+            
             <a class="d-block small" href="/admin/login">Página Login</a>
           </div>
         </div>

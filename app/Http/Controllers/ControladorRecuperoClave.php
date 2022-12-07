@@ -18,18 +18,9 @@ class ControladorRecuperoClave extends Controller
 
     public function index(Request $request)
     {
-        $titulo = "Recuperar Clave";
-        if (Usuario::autenticado() == true) {
-            if (!Patente::autorizarOperacion("MENUCONSULTA")) {
-                $codigo = "MENUCONSULTA";
-                $mensaje = "No tiene permisos para la operaci&oacute;n.";
-                return view('sistema.pagina-error', compact('titulo', 'codigo', 'mensaje'));
-            } else {
+      $titulo="Recuperar Clave";
                 return view('sistema.recupero-clave', compact('titulo'));
-            }
-        } else {
-            return redirect('admin/login');
-        }
+     
     }
 
 
@@ -38,7 +29,7 @@ class ControladorRecuperoClave extends Controller
         $email= $request->input('txtMail');
 
         $usuario = new Usuario();
-        if($usuario->verificarExistenciaMail($email)){
+        if($usuario->verificarExistenciaMail($email)!=""){
             //Envia  mail con las instrucciones
 
             $data = "Instrucciones";
@@ -77,6 +68,8 @@ class ControladorRecuperoClave extends Controller
                 return view('sistema.recupero-clave', compact('titulo', 'mensaje'));
             }  
         } else {
+            $mensaje = "No hay usuarios con este correo";
+
             return view('sistema.recupero-clave', compact('titulo', 'mensaje'));
         }
     }

@@ -4,6 +4,7 @@
 <li><a class="active" href="/">Inicio</a></li>
 <li><a href="/takeawey">Takeawey</a></li>
 <li><a href="/Nosotros">Nosotros</a></li>
+<li><a href="/Contacto">Contacto</a></li>
 @endsection
 @section('contenido')
 
@@ -86,7 +87,7 @@
                             <span>${{number_format($promo->precio,0);}}</span>
                             <h3>{{$promo->titulo}}</h3>
                             <p> {{$promo->descripcion}}</p>
-                          
+
                         </div>
 
                         <!-- Deberia hacer una valicdacion donde pregunte si esta logeado, si lo está
@@ -121,11 +122,11 @@
             <div class="col-xl-5 col-lg-5 offset-lg-1 col-md-6">
                 <div class="about_info">
                     <div class="section_title mb-20px">
-                        <span>About Us</span>
-                        <h3>Best Burger <br>
-                            in your City</h3>
+                        <span>Nosotros</span>
+                        <h3>Buger<br>
+                               Top</h3>
                     </div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate</p>
+                    <p>Somos una experiencia de hospitalidad y gastronomía en constante movimiento. Empezamos en 2003, creando el primer local Burger Top . Desde entonces, nos dedicamos a cocinar tus platillos japoneses favoritos, recibiéndote siempre, en un ambiente casual y divertido. Cada día, seleccionamos los mejores ingredientes de proveedores locales y extranjeros responsables con México y el medio ambiente. Trabajamos en equipo para tocar positivamente la vida de nuestros compañeros e invitados con procesos seguros, excelente servicio y pasión culinaria. Nos mueve aprender, enseñar y descubrir para crecer. Creemos en aprovechar lo que recibimos para convertirlo en algo mejor. Sobre todas las cosas, siempre queremos que la pases bien comiendo y bebiendo delicioso con nosotros. Descubre todo nuestro menú sorprendiéndote con algo nuevo cada vez.</p>
                     <div class="img_thumb">
                         <img src="web/img/jessica-signature.png" alt="">
                     </div>
@@ -138,9 +139,9 @@
 <!-- video_area_start -->
 <div class="video_area video_bg overlay">
     <div class="video_area_inner text-center">
-        <h3>Burger <br>
-            Bachelor</h3>
-        <span>How we make delicious Burger</span>
+        <h3>Nuestras <br>
+            Mejores Hamburguesas</h3>
+        <span>A Tu Alcance</span>
         <div class="video_payer">
 
         </div>

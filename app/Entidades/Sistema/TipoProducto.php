@@ -11,7 +11,12 @@ require app_path() . '/start/constants.php';
 class TipoProducto extends Model
 
 {
-     
+      public   function cargarDesdeRequest($request)
+      {
+            $this->idTipo = $request->input('id') != "0" ? $request->input('id') : $this->idTipo;
+            $this->nombre = $request->input('txtNombre');
+      }
+
 
       public function obtenerTodos()
       {
@@ -28,12 +33,7 @@ class TipoProducto extends Model
       }
 
 
-    public   function cargarDesdeRequest($request)
-      {
-            $this->idTipo = $request->input('id') != "0" ? $request->input('id') : $this->idTipo;
-            $this->nombre = $request->input('txtNombre');
-       
-      }
+
       public function obtenerPorId($idTipo)
       {
             $sql = "SELECT
@@ -46,7 +46,7 @@ class TipoProducto extends Model
             if (count($lstRetorno) > 0) {
                   $this->idtipo = $lstRetorno[0]->idtipoproducto;
                   $this->nombre = $lstRetorno[0]->nombre;
-                
+
                   return $this;
             }
             return null;
@@ -59,7 +59,7 @@ class TipoProducto extends Model
             ) VALUES (?);";
             $result = DB::insert($sql, [
                   $this->nombre,
-           
+
             ]);
             return $this->idcliente = DB::getPdo()->lastInsertId();
       }
@@ -79,7 +79,7 @@ class TipoProducto extends Model
             $columns = array(
                   0 => 'idtipoproducto',
                   1 => 'nombre',
-     
+
             );
             $sql = "SELECT DISTINCT
                             idtipoproducto,
@@ -92,12 +92,12 @@ class TipoProducto extends Model
             if (!empty($request['search']['value'])) {
                   $sql .= " AND ( nombre LIKE '%" . $request['search']['value'] . "%'  )";
             }
-           /// $sql .= " ORDER BY " . $columns[$request['order'][0]['column']] . "   " . $request['order'][0]['dir'];
+            /// $sql .= " ORDER BY " . $columns[$request['order'][0]['column']] . "   " . $request['order'][0]['dir'];
 
             $lstRetorno = DB::select($sql);
-          
 
-         
+
+
 
             return $lstRetorno;
       }
@@ -114,5 +114,4 @@ class TipoProducto extends Model
 
             $affected = DB::delete($sql, [$variable]);
       }
-      
 }

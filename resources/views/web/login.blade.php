@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Login</title>
       <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
       <!-- Place favicon.ico in the root directory -->
 
@@ -52,13 +52,13 @@
                                                 <label for="exampleInputPassword1">Contraseña</label>
                                                 <input type="password" name="txtClave" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                           </div>
-                                          <button type="submit" class="btn btn-primary">Iniciar</button><br>
+                                          <button type="submit" class="btn btn-primary rounded-3">Iniciar</button><br>
                                           <div class="text-center">
                                                 <a href="/Recuperar">Olvidaste Tu contraseña</a><br>
                                                 <a href="/admin/login">Administrador</a><br>
 
 
-                                                <a href="/">Volvel al inicio</a>
+                                                <a href="/">Inicio </a>
                                           </div>
                                     </form>
                               </div>
